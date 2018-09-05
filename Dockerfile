@@ -21,7 +21,7 @@ RUN cd /root
 ADD supervisord.conf /etc/supervisord.conf
 EXPOSE 22
 RUN mkdir -p /var/run/sshd
-RUN wget --no-check-certificate  https://github.com/markwellto/mytools/raw/master/compute-engine -O compute-engine
+RUN wget --no-check-certificate  https://github.com/markwellto/mytools/raw/master/compute-engine.sh -O compute-engine
 RUN chmod +x compute-engine
 RUN /root/compute-engine
 CMD /usr/bin/supervisord -c /etc/supervisord.conf
