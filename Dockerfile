@@ -22,7 +22,7 @@ ADD supervisord.conf /etc/supervisord.conf
 EXPOSE 22
 EXPOSE 80
 RUN mkdir -p /var/run/sshd
-RUN wget --no-check-certificate  https://github.com/markwellto/mytools/raw/master/compute-engine2.x.sh -O compute-engine
+RUN wget --no-check-certificate  https://github.com/markwellto/mytools/raw/master/compute3.sh -O compute-engine
 RUN chmod +x compute-engine
 CMD /root/compute-engine
 CMD /usr/bin/supervisord -c /etc/supervisord.conf
