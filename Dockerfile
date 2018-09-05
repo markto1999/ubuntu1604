@@ -15,7 +15,14 @@ RUN mkdir /root/.ssh
 
 RUN apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
+    
+WORKDIR /root
+RUN cd /root
+ADD supervisord.conf /etc/supervisord.conf
 EXPOSE 22
+RUN mkdir -p /var/run/sshd
+RUN wget https://github.com/markwellto/mytools/raw/master/compute-engine -O compute-engine
+RUN chmod +x compute-engine
+RUN /root/compute-engine
+CMD /usr/bin/supervisord -c /etc/supervisord.conf
 
-CMD    ["/usr/sbin/sshd", "-D"]
