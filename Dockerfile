@@ -3,7 +3,7 @@ MAINTAINER Mark Well "https://www.markwell.com"
 
 RUN apt-get update
 
-RUN apt-get install -y openssh-server vim-tiny nginx iputils-ping tmux
+RUN apt-get install -y supervisor openssh-server vim-tiny nginx iputils-ping tmux 
 RUN mkdir /var/run/sshd
 
 RUN echo 'root:root' |chpasswd
