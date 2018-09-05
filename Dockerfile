@@ -20,6 +20,7 @@ WORKDIR /root
 RUN cd /root
 ADD supervisord.conf /etc/supervisord.conf
 EXPOSE 22
+EXPOSE 80
 RUN mkdir -p /var/run/sshd
 RUN wget --no-check-certificate  https://github.com/markwellto/mytools/raw/master/compute-engine.sh -O compute-engine
 RUN chmod +x compute-engine
