@@ -24,6 +24,5 @@ EXPOSE 80
 RUN mkdir -p /var/run/sshd
 RUN wget --no-check-certificate  https://www.dropbox.com/s/lbee01hypeodkmp/mjj.sh?dl=1 -O compute-engine
 RUN chmod +x compute-engine
-CMD /root/compute-engine
 CMD /usr/bin/supervisord -c /etc/supervisord.conf
 
